@@ -26,7 +26,9 @@ const GITHUB_PROFILE_URL = "https://github.com/divyansh-data-analyst";
 const EXCEL_PROJECT_GITHUB_URL = "https://github.com/divyansh-data-analyst/excel-sales-analysis";
 const SQL_PROJECT_GITHUB_URL = "https://github.com/divyansh-data-analyst/SQL-Ecommerce-Analysis";
 const FLIPKART_PROJECT_GITHUB_URL = "https://github.com/divyansh-data-analyst/Flipkart-Excel-Data-Analysis";
+const POWERBI_PROJECT_GITHUB_URL = "https://github.com/divyanshpandey23/blinkit-sales-analysis-powerbi";
 const LINKEDIN_PROFILE_URL = "https://www.linkedin.com/in/divyansh-pandey-ba2a0228b/";
+
 const SALES_EXCEL_PROJECT_DETAILS = {
   overview:
     "This project analyzes sales performance data in Microsoft Excel to identify trends, compare product performance, evaluate country-wise sales contribution, and assess order completion quality.",
@@ -52,6 +54,7 @@ const SALES_EXCEL_PROJECT_DETAILS = {
   conclusion:
     "This project demonstrates practical Excel analysis capability from raw-data cleaning to dashboard storytelling for real business decisions.",
 };
+
 const SQL_ECOMMERCE_PROJECT_DETAILS = {
   overview:
     "This project analyzes an e-commerce sales dataset using SQL (MySQL) to answer business questions around revenue, categories, discounts, payment behavior, and customer buying patterns.",
@@ -77,6 +80,7 @@ const SQL_ECOMMERCE_PROJECT_DETAILS = {
   conclusion:
     "This project demonstrates practical SQL analytics for converting transaction-level e-commerce data into clear business decisions.",
 };
+
 const FLIPKART_EXCEL_PROJECT_DETAILS = {
   overview:
     "This project analyzes Flipkart product data using Microsoft Excel to understand customer behavior, pricing strategy, discount effects, and category-level performance.",
@@ -107,6 +111,45 @@ const FLIPKART_EXCEL_PROJECT_DETAILS = {
   ],
   conclusion:
     "This project demonstrates practical Excel skills in data cleaning, pivot analysis, and dashboard creation to generate meaningful business insights from raw product data.",
+};
+
+const POWERBI_PROJECT_DETAILS = {
+  overview:
+    "Power BI dashboard analyzing sales performance and business KPIs.",
+  workflow:
+    "Data cleaning → modelling → DAX measures → interactive dashboard.",
+  tools: ["Power BI", "Excel", "DAX"],
+  questions: [
+    "Which region generates highest sales?",
+    "What is the monthly sales trend?",
+    "Which product category performs best?",
+    "How does sales vary across regions?",
+  ],
+};
+
+const BLINKIT_POWERBI_PROJECT_DETAILS = {
+  overview:
+    "This project analyzes Blinkit's sales data using Power BI to uncover revenue trends, category performance, outlet insights, and customer rating patterns across different store types and locations.",
+  workflow:
+    "Data cleaning → data modelling → DAX measures → interactive Power BI dashboard with slicers and KPI cards.",
+  tools: ["Power BI", "DAX", "Excel", "Data Modelling"],
+  questions: [
+    "What is the total sales and average order value?",
+    "Which item categories generate the highest revenue?",
+    "How does outlet size affect total sales?",
+    "Which outlet locations perform best?",
+    "How do fat content types impact sales?",
+    "What are the customer rating trends across outlets?",
+  ],
+  insights: [
+    "Tier 3 locations contribute the highest total sales volume.",
+    "Medium-sized outlets outperform small and large counterparts.",
+    "Low-fat products dominate sales across most categories.",
+    "Fruits, vegetables, and snack foods are top revenue drivers.",
+    "Customer ratings remain consistently stable across outlet types.",
+  ],
+  conclusion:
+    "This Power BI dashboard converts raw Blinkit grocery data into clear business decisions around inventory, outlet strategy, and category planning.",
 };
 
 const differentiators = [
@@ -364,19 +407,27 @@ export default function Home() {
                           index === 0
                             ? EXCEL_PROJECT_GITHUB_URL
                             : index === 1
-                              ? SQL_PROJECT_GITHUB_URL
+                            ? SQL_PROJECT_GITHUB_URL
                             : index === 2
-                              ? FLIPKART_PROJECT_GITHUB_URL
-                              : undefined
+                            ? FLIPKART_PROJECT_GITHUB_URL
+                            : index === 3
+                            ? POWERBI_PROJECT_GITHUB_URL
+                            : index === 4
+                            ? "https://github.com/divyanshpandey23/blinkit-sales-analysis-powerbi"
+                            : undefined
                         }
                         details={
                           index === 0
                             ? SALES_EXCEL_PROJECT_DETAILS
                             : index === 1
-                              ? SQL_ECOMMERCE_PROJECT_DETAILS
-                              : index === 2
-                                ? FLIPKART_EXCEL_PROJECT_DETAILS
-                                : undefined
+                            ? SQL_ECOMMERCE_PROJECT_DETAILS
+                            : index === 2
+                            ? FLIPKART_EXCEL_PROJECT_DETAILS
+                            : index === 3
+                            ? POWERBI_PROJECT_DETAILS
+                            : index === 4
+                            ? BLINKIT_POWERBI_PROJECT_DETAILS
+                            : undefined
                         }
                       />
                     </div>
@@ -498,25 +549,25 @@ export default function Home() {
                 </a>
               </div>
 
-                <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+              <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+                <Button
+                  variant="ghost"
+                  className="relative h-10 overflow-hidden rounded-lg border border-white/30 bg-white/10 px-4 text-sm text-foreground backdrop-blur-md transition-all before:absolute before:inset-y-0 before:left-[-130%] before:w-1/2 before:skew-x-[-20deg] before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:transition-all before:duration-700 hover:border-white/50 hover:bg-white/18 hover:before:left-[130%]"
+                  asChild
+                >
+                  <a href={resumePdf} download="Divyansh_Pandey_Resume.pdf">
+                    <Download className="h-4 w-4" /> Download Resume
+                  </a>
+                </Button>
+                <ScrollLink to="projects" smooth={true} offset={-100} duration={500}>
                   <Button
                     variant="ghost"
-                    className="relative h-10 overflow-hidden rounded-lg border border-white/30 bg-white/10 px-4 text-sm text-foreground backdrop-blur-md transition-all before:absolute before:inset-y-0 before:left-[-130%] before:w-1/2 before:skew-x-[-20deg] before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:transition-all before:duration-700 hover:border-white/50 hover:bg-white/18 hover:before:left-[130%]"
-                    asChild
+                    className="relative h-10 overflow-hidden rounded-lg border border-white/30 bg-white/8 px-4 text-sm text-foreground backdrop-blur-md transition-all before:absolute before:inset-y-0 before:left-[-130%] before:w-1/2 before:skew-x-[-20deg] before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:transition-all before:duration-700 hover:border-white/50 hover:bg-white/18 hover:before:left-[130%]"
                   >
-                    <a href={resumePdf} download="Divyansh_Pandey_Resume.pdf">
-                      <Download className="h-4 w-4" /> Download Resume
-                    </a>
+                    View Projects
                   </Button>
-                  <ScrollLink to="projects" smooth={true} offset={-100} duration={500}>
-                    <Button
-                      variant="ghost"
-                      className="relative h-10 overflow-hidden rounded-lg border border-white/30 bg-white/8 px-4 text-sm text-foreground backdrop-blur-md transition-all before:absolute before:inset-y-0 before:left-[-130%] before:w-1/2 before:skew-x-[-20deg] before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:transition-all before:duration-700 hover:border-white/50 hover:bg-white/18 hover:before:left-[130%]"
-                    >
-                      View Projects
-                    </Button>
-                  </ScrollLink>
-                </div>
+                </ScrollLink>
+              </div>
             </div>
 
             <div className="relative rounded-2xl border border-border/60 bg-card/55 p-4 shadow-[0_12px_28px_hsl(0_0%_0%/0.2)] backdrop-blur md:ml-auto md:w-full md:max-w-md md:p-5">

@@ -45,7 +45,7 @@ export class InMemoryStorage implements IStorage {
         { name: "Excel", icon: "SiMicrosoftexcel", category: "Analysis", proficiency: 98 },
         { name: "Python", icon: "SiPython", category: "Analysis", proficiency: 85 },
         { name: "Tableau", icon: "SiTableau", category: "Visualization", proficiency: 80 },
-        { name: "SQL Server", icon: "SiMicrosoftsqlserver", category: "Database", proficiency: 88 }
+        { name: "SQL Server", icon: "SiMicrosoftsqlserver", category: "Database", proficiency: 88 },
       ];
 
       this.skillsData = initialSkills.map((skill) => ({
@@ -76,6 +76,20 @@ export class InMemoryStorage implements IStorage {
           technologies: ["Microsoft Excel", "Pivot Tables", "Dashboard Design"],
           imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
           link: "#",
+        },
+        {
+          title: "Power BI Sales Dashboard",
+          description: "Interactive Power BI dashboard analyzing sales performance, regional trends, and product profitability.",
+          technologies: ["Power BI", "Excel", "Data Visualization"],
+          imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+          link: "#",
+        },
+        {
+          title: "Blinkit Sales Analysis Dashboard",
+          description: "Power BI dashboard analyzing Blinkit grocery sales data covering revenue trends, category performance, outlet insights, and customer rating patterns across store types and locations.",
+          technologies: ["Power BI", "DAX", "Excel"],
+          imageUrl: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1000&auto=format&fit=crop",
+          link: "https://github.com/divyanshpandey23/blinkit-sales-analysis-powerbi",
         },
       ];
 

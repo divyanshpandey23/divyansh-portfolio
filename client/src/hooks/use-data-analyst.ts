@@ -1,5 +1,5 @@
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { api } from "@shared/routes"; // Ensure this import path is correct based on your setup
+import { api } from "@shared/routes";
 import { type InsertContactMessage } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
 
@@ -20,17 +20,14 @@ export interface Skill {
   proficiency: number;
 }
 
-// Fetch Projects
 export function useProjects() {
   return useQuery<Project[]>({
     queryKey: ['projects'],
     queryFn: async (): Promise<Project[]> => {
-      // Use the path from api definition
-      const res = await fetch('/api/projects'); 
+      const res = await fetch('/api/projects');
       if (!res.ok) throw new Error("Failed to fetch projects");
       return await res.json() as Project[];
     },
-    // Mock data if backend is empty/failing for demo purposes
     initialData: [
       {
         id: 1,
@@ -55,12 +52,27 @@ export function useProjects() {
         technologies: ["Microsoft Excel", "Pivot Tables", "Dashboard Design"],
         imageUrl: "https://images.unsplash.com/photo-1543286386-713df548e9cc?w=800&q=80",
         link: "#"
+      },
+      {
+        id: 4,
+        title: "Power BI Sales Dashboard",
+        description: "Interactive Power BI dashboard analyzing sales performance, regional trends, and product profitability.",
+        technologies: ["Power BI", "Excel", "Data Visualization"],
+        imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        link: "#"
+      },
+      {
+        id: 5,
+        title: "Blinkit Sales Analysis Dashboard",
+        description: "Power BI dashboard analyzing Blinkit grocery sales data covering revenue trends, category performance, outlet insights, and customer rating patterns across store types and locations.",
+        technologies: ["Power BI", "DAX", "Excel"],
+        imageUrl: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80",
+        link: "https://github.com/divyanshpandey23/blinkit-sales-analysis-powerbi"
       }
     ]
   });
 }
 
-// Fetch Skills
 export function useSkills() {
   return useQuery<Skill[]>({
     queryKey: ['skills'],
@@ -69,7 +81,6 @@ export function useSkills() {
       if (!res.ok) throw new Error("Failed to fetch skills");
       return await res.json() as Skill[];
     },
-    // Mock data ensures the UI looks good immediately
     initialData: [
       { id: 1, name: "MySQL", icon: "SiMysql", category: "Database", proficiency: 95 },
       { id: 2, name: "Power BI", icon: "SiPowerbi", category: "Visualization", proficiency: 90 },
@@ -81,10 +92,9 @@ export function useSkills() {
   });
 }
 
-// Contact Form Mutation
 export function useContactMutation() {
   const { toast } = useToast();
-  
+
   return useMutation({
     mutationFn: async (data: InsertContactMessage) => {
       const res = await fetch('/api/contact', {
