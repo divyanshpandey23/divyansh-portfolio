@@ -53,14 +53,7 @@ export function useProjects() {
         imageUrl: "https://images.unsplash.com/photo-1543286386-713df548e9cc?w=800&q=80",
         link: "#"
       },
-      {
-        id: 4,
-        title: "Power BI Sales Dashboard",
-        description: "Interactive Power BI dashboard analyzing sales performance, regional trends, and product profitability.",
-        technologies: ["Power BI", "Excel", "Data Visualization"],
-        imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        link: "#"
-      },
+      
       {
         id: 5,
         title: "Blinkit Sales Analysis Dashboard",

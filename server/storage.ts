@@ -77,13 +77,7 @@ export class InMemoryStorage implements IStorage {
           imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
           link: "#",
         },
-        {
-          title: "Power BI Sales Dashboard",
-          description: "Interactive Power BI dashboard analyzing sales performance, regional trends, and product profitability.",
-          technologies: ["Power BI", "Excel", "Data Visualization"],
-          imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-          link: "#",
-        },
+         
         {
           title: "Blinkit Sales Analysis Dashboard",
           description: "Power BI dashboard analyzing Blinkit grocery sales data covering revenue trends, category performance, outlet insights, and customer rating patterns across store types and locations.",
